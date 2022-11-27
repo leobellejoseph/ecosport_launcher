@@ -1,3 +1,4 @@
+import 'package:ecosport_launcher/config/config.dart';
 import 'package:ecosport_launcher/screens/screens.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      onGenerateRoute: Config.getRoute,
+      initialRoute: MainScreen.id,
     );
   }
 }

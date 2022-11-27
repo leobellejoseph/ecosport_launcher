@@ -1,3 +1,4 @@
+import 'package:ecosport_launcher/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -12,38 +13,32 @@ class TimeWidget extends StatelessWidget {
         padding: const EdgeInsets.all(4),
         width: size.width,
         height: size.height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white60,
-          border: Border.all(color: Colors.grey),
-        ),
         child: StreamBuilder(
           stream: Stream.periodic(const Duration(seconds: 1)),
           builder: (context, snap) {
+            final hour = DateFormat('hh').format(DateTime.now());
+            final min = DateFormat('mm').format(DateTime.now());
+            final sec = DateFormat('ss').format(DateTime.now());
+            final amPM = DateFormat('a').format(DateTime.now());
+            final date = DateFormat.yMMMd().format(DateTime.now().toLocal());
             return Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                Text(date, style: AppTheme.ddMMM(true)),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(DateFormat('hh').format(DateTime.now()),
-                        style: Theme.of(context).textTheme.displayMedium),
-                    Text(':', style: Theme.of(context).textTheme.displayMedium),
-                    Text(DateFormat('mm').format(DateTime.now()),
-                        style: Theme.of(context).textTheme.displayMedium),
+                    Text(hour, style: AppTheme.HHMM(true)),
+                    Text(':', style: AppTheme.HHMM(true)),
+                    Text(min, style: AppTheme.HHMM(true)),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(DateFormat('ss').format(DateTime.now()),
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black87)),
+                        Text(sec, style: AppTheme.ss(true)),
                         const SizedBox(height: 4),
-                        Text(DateFormat('a').format(DateTime.now()),
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black38)),
+                        Text(amPM, style: AppTheme.amPM(true)),
                       ],
                     )
                   ],
