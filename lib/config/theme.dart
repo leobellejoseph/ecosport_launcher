@@ -47,4 +47,9 @@ class AppTheme {
   static Image wallpaper() {
     return Image.asset('images/wallpaper.JPEG');
   }
+
+  static TextStyle appCardTitle() {
+    return const TextStyle(
+        fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black54);
+  }
 }
