@@ -19,7 +19,7 @@ class AppTheme {
         fontSize: 20);
   }
 
-  static TextStyle HHMM(bool isDarkMode) {
+  static TextStyle hhMM(bool isDarkMode) {
     return TextStyle(
         letterSpacing: 2,
         fontWeight: FontWeight.bold,
@@ -42,5 +42,9 @@ class AppTheme {
 
   static Border border(bool isDarkMode) {
     return Border.all(color: Colors.white);
+  }
+
+  static Image wallpaper() {
+    return Image.asset('images/wallpaper.JPEG');
   }
 }

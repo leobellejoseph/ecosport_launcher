@@ -1,6 +1,6 @@
 import 'package:ecosport_launcher/screens/screens.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 export 'theme.dart';
 

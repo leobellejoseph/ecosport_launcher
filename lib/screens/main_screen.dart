@@ -1,4 +1,5 @@
-import 'package:ecosport_launcher/widgets/time_weather.dart';
+import 'package:ecosport_launcher/config/config.dart';
+import 'package:ecosport_launcher/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -19,25 +20,7 @@ class MainScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       body: Stack(
         children: [
-          const Flexible(
-            child: Image(
-              image: AssetImage('images/wallpaper.png'),
-            ),
-          ),
-          // const SizedBox.expand(
-          //   child: DecoratedBox(
-          //     decoration: BoxDecoration(
-          //       gradient: LinearGradient(
-          //         begin: Alignment.topLeft,
-          //         end: Alignment.bottomRight,
-          //         colors: [
-          //           Colors.black45,
-          //           Colors.black87,
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          AppTheme.wallpaper(),
           SafeArea(
             child: Padding(
               padding:

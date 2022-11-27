@@ -8,11 +8,13 @@
 import 'package:ecosport_launcher/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    final packageInfo = await PackageInfo.fromPlatform();
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MainApp());
+    await tester.pumpWidget(MainApp(package: packageInfo));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

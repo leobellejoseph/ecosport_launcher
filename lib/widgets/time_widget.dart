@@ -30,9 +30,9 @@ class TimeWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(hour, style: AppTheme.HHMM(true)),
-                    Text(':', style: AppTheme.HHMM(true)),
-                    Text(min, style: AppTheme.HHMM(true)),
+                    Text(hour, style: AppTheme.hhMM(true)),
+                    Text(':', style: AppTheme.hhMM(true)),
+                    Text(min, style: AppTheme.hhMM(true)),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
