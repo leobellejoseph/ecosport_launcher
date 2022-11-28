@@ -68,7 +68,10 @@ class AppScreen extends StatelessWidget {
                       final Application appInfo = apps[index];
                       return Container(
                           child: appInfo is ApplicationWithIcon
-                              ? AppCard(application: appInfo)
+                              ? AppCard(
+                                  application: appInfo,
+                                  index: index,
+                                )
                               : Text(appInfo.appName ?? 'No App Name'));
                     },
                   );

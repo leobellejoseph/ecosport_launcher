@@ -23,6 +23,8 @@ dependencies:
   package_info_plus: ^3.0.2
   device_apps: ^2.2.0
   flutter_spinkit: ^5.1.0
+  animate_do: ^3.0.2
+  hydrated_bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:
