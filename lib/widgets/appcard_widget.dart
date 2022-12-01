@@ -27,16 +27,18 @@ class AppCard extends StatelessWidget {
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: LayoutBuilder(builder: (context, constraints) {
-                      return SizedBox(
-                        height: constraints.maxHeight * 0.8,
-                        width: constraints.maxWidth * 0.8,
-                        child: Image.memory(
-                          application.icon,
-                          fit: BoxFit.fill,
-                        ),
-                      );
-                    }),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return SizedBox(
+                          height: constraints.maxHeight * 0.8,
+                          width: constraints.maxWidth * 0.8,
+                          child: Image.memory(
+                            application.icon,
+                            fit: BoxFit.fill,
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   Align(
                     alignment: Alignment.topCenter,
