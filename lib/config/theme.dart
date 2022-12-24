@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'values.dart';
 
 class AppTheme {
   const AppTheme();
@@ -16,20 +17,20 @@ class AppTheme {
         letterSpacing: 3,
         fontWeight: FontWeight.bold,
         color: isDarkMode ? Colors.yellow.shade600 : Colors.black,
-        fontSize: 20);
+        fontSize: Values.mediumFontSize);
   }
 
   static TextStyle hhMM(bool isDarkMode) {
     return TextStyle(
         letterSpacing: 2,
         fontWeight: FontWeight.bold,
-        fontSize: 50,
+        fontSize: Values.largeFontSize,
         color: isDarkMode ? Colors.white70 : Colors.black);
   }
 
   static TextStyle ss(bool isDarkMode) {
     return TextStyle(
-        fontSize: 18,
+        fontSize: Values.smallFontSize,
         fontWeight: FontWeight.bold,
         color: isDarkMode ? Colors.yellow.shade700 : Colors.black87);
   }
@@ -49,7 +50,9 @@ class AppTheme {
   }
 
   static TextStyle appCardTitle() {
-    return const TextStyle(
-        fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black54);
+    return TextStyle(
+        fontSize: Values.mediumFontSize,
+        fontWeight: FontWeight.w400,
+        color: Colors.black54);
   }
 }

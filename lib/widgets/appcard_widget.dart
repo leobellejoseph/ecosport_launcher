@@ -12,7 +12,7 @@ class AppCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final delay = index / 2 * 10;
+    final delay = index / 2 * 2;
     if (index.isEven) {
       return FadeInLeftBig(
         delay: Duration(milliseconds: delay.toInt()),
@@ -53,44 +53,43 @@ class AppCard extends StatelessWidget {
           ),
         ),
       );
-    } else {
-      return FadeInRightBig(
-        delay: Duration(milliseconds: delay.toInt()),
-        child: Card(
-          child: Material(
-            borderRadius: BorderRadius.circular(8),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(4),
-              splashColor: Colors.yellow,
-              onDoubleTap: () => application.openApp(),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: LayoutBuilder(builder: (context, constraints) {
-                      return SizedBox(
-                        height: constraints.maxHeight * 0.8,
-                        width: constraints.maxWidth * 0.8,
-                        child: Image.memory(
-                          application.icon,
-                          fit: BoxFit.fill,
-                        ),
-                      );
-                    }),
+    }
+    return FadeInRightBig(
+      delay: Duration(milliseconds: delay.toInt()),
+      child: Card(
+        child: Material(
+          borderRadius: BorderRadius.circular(8),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(4),
+            splashColor: Colors.yellow,
+            onDoubleTap: () => application.openApp(),
+            child: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: LayoutBuilder(builder: (context, constraints) {
+                    return SizedBox(
+                      height: constraints.maxHeight * 0.7,
+                      width: constraints.maxWidth * 0.7,
+                      child: Image.memory(
+                        application.icon,
+                        fit: BoxFit.fill,
+                      ),
+                    );
+                  }),
+                ),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Text(
+                    application.appName,
+                    style: AppTheme.appCardTitle(),
                   ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Text(
-                      application.appName,
-                      style: AppTheme.appCardTitle(),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
-      );
-    }
+      ),
+    );
   }
 }
